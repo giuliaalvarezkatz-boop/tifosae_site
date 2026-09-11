@@ -598,6 +598,7 @@ footer.site-footer {
 .deco-media {
   width: 100%;
   height: 0;
+  position: relative;
   background-image: repeating-linear-gradient(
     45deg,
     #e6e6e6,
@@ -611,6 +612,14 @@ footer.site-footer {
 .deco-4x3 .deco-media { padding-top: 75%; }
 .deco-16x9 .deco-media { padding-top: 56.25%; }
 .deco-portrait .deco-media { padding-top: 133%; }
+
+.deco-media video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 /* ---------- submit page (v2) ---------- */
 
