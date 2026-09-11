@@ -692,9 +692,9 @@ footer.site-footer {
   background-image: repeating-linear-gradient(
     to bottom,
     #000000 0px,
-    #000000 2px,
-    transparent 2px,
-    transparent 4px
+    #000000 1.6px,
+    transparent 1.6px,
+    transparent 3.2px
   );
 }
 
@@ -706,9 +706,9 @@ footer.site-footer {
   background-image: repeating-linear-gradient(
     to bottom,
     #000000 0px,
-    #000000 2px,
-    transparent 2px,
-    transparent 4px
+    #000000 1.6px,
+    transparent 1.6px,
+    transparent 3.2px
   );
 }
 
@@ -752,6 +752,7 @@ footer.site-footer {
 .read-more {
   margin: 24px 0 0;
   text-indent: 0;
+  text-align: right;
 }
 
 .read-more a {
