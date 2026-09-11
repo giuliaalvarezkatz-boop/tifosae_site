@@ -381,7 +381,8 @@ footer.site-footer {
 
 .masthead-logo a:hover {
   color: #000000;
-  text-shadow: 3px 3px 0 #ffffff;
+  opacity: 1;
+  text-shadow: 4px 4px 0 #ffffff;
 }
 
 .masthead-icon {
@@ -428,7 +429,7 @@ footer.site-footer {
   font-family: "lores-12-narrow", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 22.5px;
+  font-size: 30px;
   color: #0000ee;
   text-decoration: underline;
   white-space: nowrap;
