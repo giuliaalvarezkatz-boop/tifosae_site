@@ -193,8 +193,13 @@
 </div>
 
 <script>
-  document.querySelectorAll('.deco-window').forEach(function (box) {
+  console.log('SCRIPT IS RUNNING');
+  var boxes = document.querySelectorAll('.deco-window');
+  console.log('found', boxes.length, 'deco-window elements');
+
+  boxes.forEach(function (box, i) {
     var video = box.querySelector('video');
+    console.log('box', i, 'has video:', !!video);
     if (!video) return;
 
     box.addEventListener('mouseenter', function () {
