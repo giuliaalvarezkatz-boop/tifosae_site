@@ -353,6 +353,7 @@ footer.site-footer {
   flex-wrap: wrap;
   background: #000000;
   color: #ffffff;
+  position: relative;
 }
 
 .masthead-logo-row {
@@ -370,6 +371,15 @@ footer.site-footer {
   margin: 0;
   line-height: 1;
   letter-spacing: -0.04em;
+}
+
+.masthead-logo a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.masthead-logo a:hover {
+  opacity: 0.85;
 }
 
 .masthead-icon {
@@ -406,6 +416,32 @@ footer.site-footer {
 
 .masthead-nav a:hover {
   text-decoration: underline;
+}
+
+.masthead-tagline {
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  font-family: "lores-12-narrow", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #0000ee;
+  text-decoration: underline;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+}
+
+.masthead-logo-row:hover ~ .masthead-tagline {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .masthead-tagline {
+    display: none;
+  }
 }
 
 .dash-divider {
