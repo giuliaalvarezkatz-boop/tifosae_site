@@ -519,7 +519,7 @@ footer.site-footer {
     margin: 0 20px 40px;
   }
   .window-body {
-    min-width: 0;
+    width: auto;
   }
   .window-title {
     white-space: normal;
@@ -735,7 +735,7 @@ footer.site-footer {
 
 .window-body {
   padding: 32px 40px;
-  min-width: min(17.6vw, 420px);
+  width: min(17.6vw, 420px);
 }
 
 .window-body p {
