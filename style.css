@@ -486,3 +486,161 @@ footer.site-footer {
   .entry-icon { width: 48px; height: 48px; }
 }
 
+/* ---------- submit page (v2) ---------- */
+
+.submit-content {
+  max-width: 720px;
+  margin: 0 32px 80px;
+  text-align: left;
+}
+
+.submit-content p {
+  font-family: "lores-12", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #000000;
+  margin: 0 0 32px;
+}
+
+.submit-content .term {
+  font-weight: 400;
+}
+
+.submit-housekeeping-label {
+  font-family: "argent-pixel-cf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  color: #000000;
+  margin: 0 0 18px;
+}
+
+.submit-content ul {
+  margin: 0 0 32px;
+  padding-left: 28px;
+}
+
+.submit-content li {
+  font-family: "lores-12", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #000000;
+  margin: 0 0 10px;
+}
+
+@media (max-width: 640px) {
+  .submit-content { margin-left: 20px; margin-right: 20px; }
+}
+
+/* ---------- retro window-chrome text box (reusable) ---------- */
+
+.window-box {
+  border: 3px solid #000000;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+  margin: 0 0 40px;
+}
+
+.window-titlebar {
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  border-bottom: 3px solid #000000;
+}
+
+.window-icon-box {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border: 2px solid #000000;
+  border-radius: 0;
+  background-color: #ffffff;
+  background-size: 21px 21px;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* SPORT LABELS — add one 3-line block per new sport.
+   Then on any post, just set data-sport="yourlabel" on
+   .window-box once, and both icon badges update automatically. */
+
+.window-box[data-sport="baseball"] .window-icon-box {
+  background-image: url('assets/icons/baseball-icon.png');
+}
+
+.window-box[data-sport="football"] .window-icon-box {
+  background-image: url('assets/icons/football-icon.png');
+}
+
+.window-box[data-sport="bowling"] .window-icon-box {
+  background-image: url('assets/icons/bowling-icon.png');
+}
+
+.window-lines {
+  flex: 1 1 auto;
+  height: 22px;
+  margin: 0 6px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #000000 0px,
+    #000000 2px,
+    transparent 2px,
+    transparent 4px
+  );
+}
+
+.window-lines-edge {
+  width: 14px;
+  height: 22px;
+  flex-shrink: 0;
+  margin: 0 6px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #000000 0px,
+    #000000 2px,
+    transparent 2px,
+    transparent 4px
+  );
+}
+
+.window-title {
+  font-family: "lores-22-bold-oakland", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 19px;
+  color: #000000;
+  white-space: nowrap;
+  padding: 0 2px;
+  margin: 0;
+  line-height: 1;
+}
+
+.window-body {
+  padding: 32px 40px;
+}
+
+.window-body p {
+  font-family: "lores-12", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  line-height: 1.75;
+  color: #000000;
+  margin: 0;
+  text-indent: 2em;
+}
+
+@media (max-width: 640px) {
+  .window-title { font-size: 16px; }
+  .window-body { padding: 28px 24px; }
+  .window-icon-box { width: 36px; height: 36px; }
+}
+
