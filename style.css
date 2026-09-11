@@ -550,6 +550,10 @@ footer.site-footer {
   box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.25);
 }
 
+.home-feed .window-box:hover + .window-box {
+  transform: translateY(60px);
+}
+
 .deco-window {
   position: absolute;
   z-index: 1;
@@ -735,7 +739,7 @@ footer.site-footer {
 
 .window-body {
   padding: 32px 40px;
-  width: 620px;
+  width: 713px;
 }
 
 .window-body p {
