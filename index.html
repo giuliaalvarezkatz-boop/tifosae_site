@@ -24,7 +24,7 @@
 
 <div class="desktop-scatter">
 
-  <div class="deco-window deco-square" style="width: 300px; top: 40px; left: 2%;" onmouseenter="this.querySelector('video').play()" onmouseleave="this.querySelector('video').pause()">
+  <div class="deco-window deco-square" style="width: 300px; top: 40px; left: 2%;">
     <div class="window-titlebar">
       <div class="window-lines-edge"></div>
       <div class="window-icon-box"></div>
@@ -35,7 +35,7 @@
     </div>
   </div>
 
-  <div class="deco-window deco-4x3" style="width: 280px; top: 70px; right: 9%;" onmouseenter="this.querySelector('video').play()" onmouseleave="this.querySelector('video').pause()">
+  <div class="deco-window deco-4x3" style="width: 280px; top: 70px; right: 9%;">
     <div class="window-titlebar">
       <div class="window-lines-edge"></div>
       <div class="window-icon-box"></div>
@@ -191,6 +191,27 @@
 </main>
 
 </div>
+
+<script>
+  document.querySelectorAll('.deco-window').forEach(function (box) {
+    var video = box.querySelector('video');
+    if (!video) return;
+
+    box.addEventListener('mouseenter', function () {
+      console.log('hover IN on', video.src);
+      video.play().then(function () {
+        console.log('play() succeeded');
+      }).catch(function (e) {
+        console.log('play() failed:', e);
+      });
+    });
+
+    box.addEventListener('mouseleave', function () {
+      console.log('hover OUT on', video.src);
+      video.pause();
+    });
+  });
+</script>
 
 </body>
 </html>
