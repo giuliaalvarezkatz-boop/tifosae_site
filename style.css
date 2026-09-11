@@ -1,0 +1,755 @@
+/* ============================================
+   TIFOSÆ — retro 16-bit sports lit mag
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --ink: #171512;
+  --parchment: #eee3c8;
+  --parchment-dim: #ddcfab;
+  --night: #14122a;
+  --night-deep: #0b0a1a;
+  --gold: #f4c542;
+  --red: #d94a3d;
+  --line: #3a3660;
+  --max-w: 760px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--night);
+  color: var(--parchment);
+  font-family: 'IBM Plex Serif', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body {
+  background-image:
+    linear-gradient(var(--night) 0%, var(--night-deep) 100%);
+  min-height: 100vh;
+}
+
+/* subtle scanline texture behind everything */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.025) 0px,
+    rgba(255, 255, 255, 0.025) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  z-index: 999;
+}
+
+a { color: var(--gold); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+h1, h2, h3, .pixel {
+  font-family: "argent-pixel-cf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- layout shell ---------- */
+
+.wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+header.site-header {
+  border-bottom: 3px solid var(--gold);
+  padding: 28px 24px 20px;
+  text-align: center;
+}
+
+.site-header .logo {
+  font-size: 28px;
+  color: var(--gold);
+  margin: 0 0 10px;
+  text-shadow: 3px 3px 0 var(--red);
+}
+
+.site-header .tagline {
+  font-family: 'IBM Plex Serif', serif;
+  font-style: italic;
+  color: var(--parchment);
+  opacity: 0.85;
+  margin: 0 0 18px;
+  font-size: 15px;
+}
+
+nav.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  font-family: "argent-pixel-cf", sans-serif;
+  font-size: 11px;
+}
+
+nav.main-nav a {
+  color: var(--parchment);
+  padding: 4px 2px;
+}
+
+nav.main-nav a::before {
+  content: "▸ ";
+  color: var(--red);
+}
+
+nav.main-nav a:hover {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+footer.site-footer {
+  text-align: center;
+  padding: 40px 24px;
+  font-size: 13px;
+  opacity: 0.6;
+  border-top: 1px solid var(--line);
+  margin-top: 40px;
+}
+
+/* ---------- homepage hero ---------- */
+
+.hero {
+  text-align: center;
+  padding: 64px 24px;
+}
+
+.hero h1.big {
+  font-size: 42px;
+  color: var(--gold);
+  text-shadow: 4px 4px 0 var(--red);
+  margin: 0 0 20px;
+}
+
+.hero p.lede {
+  max-width: 520px;
+  margin: 0 auto 30px;
+  font-size: 19px;
+}
+
+.btn {
+  display: inline-block;
+  font-family: "argent-pixel-cf", sans-serif;
+  font-size: 12px;
+  background: var(--red);
+  color: var(--parchment);
+  padding: 14px 22px;
+  border: 3px solid var(--parchment);
+  box-shadow: 4px 4px 0 var(--night-deep);
+}
+
+.btn:hover {
+  background: var(--gold);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+/* ---------- archive grid ---------- */
+
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.card {
+  border: 3px solid var(--line);
+  background: var(--night-deep);
+  overflow: hidden;
+  transition: border-color 0.15s ease;
+}
+
+.card:hover {
+  border-color: var(--gold);
+}
+
+.card-bg {
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%; /* 16:9 ratio, works in every browser */
+  background-size: cover;
+  background-position: center;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  border-bottom: 3px solid var(--line);
+}
+
+.card-body {
+  padding: 16px 16px 20px;
+}
+
+.card-genre {
+  font-family: "argent-pixel-cf", sans-serif;
+  font-size: 10px;
+  color: var(--gold);
+  margin: 0 0 8px;
+}
+
+.card-title {
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: 600;
+  font-size: 20px;
+  margin: 0 0 6px;
+  color: var(--parchment);
+}
+
+.card-author {
+  font-size: 14px;
+  opacity: 0.75;
+  font-style: italic;
+}
+
+.card-body a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card-body a:hover .card-title {
+  color: var(--gold);
+}
+
+/* ---------- individual post page ---------- */
+
+.post-banner {
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%; /* 16:9 ratio, works in every browser */
+  background-size: cover;
+  background-position: center;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  border-bottom: 4px solid var(--gold);
+}
+
+.post-meta {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 28px 24px 0;
+  text-align: center;
+}
+
+.post-genre {
+  font-family: "argent-pixel-cf", sans-serif;
+  font-size: 11px;
+  color: var(--red);
+  margin: 0 0 14px;
+}
+
+.post-title {
+  font-size: 30px;
+  margin: 0 0 10px;
+  color: var(--parchment);
+}
+
+.post-author {
+  font-style: italic;
+  opacity: 0.8;
+  margin: 0 0 6px;
+}
+
+.post-body {
+  max-width: var(--max-w);
+  margin: 36px auto 0;
+  padding: 0 24px;
+  background: var(--parchment);
+  color: var(--ink);
+  border: 3px solid var(--line);
+}
+
+.post-body-inner {
+  padding: 40px 36px;
+  font-size: 18px;
+}
+
+.post-body-inner p {
+  margin: 0 0 1.2em;
+}
+
+.post-body-inner p:first-of-type::first-letter {
+  font-size: 2.6em;
+  float: left;
+  line-height: 0.9;
+  padding-right: 8px;
+  color: var(--red);
+  font-weight: 600;
+}
+
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  font-family: "argent-pixel-cf", sans-serif;
+  font-size: 11px;
+}
+
+/* ---------- guidelines / submit page ---------- */
+
+.guidelines h2 {
+  font-size: 18px;
+  color: var(--gold);
+  margin-top: 40px;
+}
+
+.guidelines blockquote {
+  border-left: 4px solid var(--red);
+  margin: 24px 0;
+  padding: 4px 20px;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  .hero h1.big { font-size: 30px; }
+  nav.main-nav { flex-wrap: wrap; gap: 16px 20px; }
+  .post-body-inner { padding: 28px 20px; }
+}
+
+/* ============================================
+   HOMEPAGE V2 — Photoshop mockup direction
+   white / black / thick borders
+   ============================================ */
+
+.v2-page {
+  background: #ffffff;
+  color: #000000;
+}
+
+.v2-page a { color: #000000; }
+.v2-page a:hover { color: #000000; opacity: 0.6; }
+
+.masthead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 44px 32px 14px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.masthead-logo-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.masthead-logo {
+  font-family: "argent-pixel-cf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 56px;
+  color: #000000;
+  margin: 0;
+  letter-spacing: -0.04em;
+}
+
+.masthead-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #d9d9d9;
+  border: 3px solid #000000;
+  flex-shrink: 0;
+}
+
+.masthead-nav {
+  font-family: "argent-pixel-cf", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 19px;
+  line-height: 1.3;
+  text-align: right;
+}
+
+.masthead-nav a {
+  display: block;
+  text-decoration: none;
+}
+
+.masthead-nav a:hover {
+  text-decoration: underline;
+}
+
+.dash-divider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 32px 56px;
+}
+
+.dash-divider span {
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: #000000;
+  flex-shrink: 0;
+}
+
+.entry {
+  position: relative;
+  padding-left: 90px;
+  margin: 0 32px 64px;
+}
+
+.entry-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.entry-byline {
+  font-family: "argent-pixel-cf", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 17px;
+  margin: 8px 0 4px;
+}
+
+.entry-title {
+  font-family: "argent-pixel-cf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 26px;
+  margin: 0 0 22px;
+}
+
+.entry-title a {
+  text-decoration: none;
+}
+
+.entry-title a:hover {
+  text-decoration: underline;
+}
+
+.entry-box {
+  margin-left: -90px;
+  border: 10px solid #000000;
+}
+
+.entry-box-inner {
+  padding: 48px 56px;
+  background-size: cover;
+  background-position: center;
+}
+
+.entry-box-inner p {
+  font-family: "lores-12", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  line-height: 1.75;
+  color: #000000;
+  margin: 0;
+  text-indent: 2em;
+}
+
+@media (max-width: 640px) {
+  .masthead { flex-direction: column; }
+  .masthead-nav { text-align: left; }
+  .masthead-logo { font-size: 38px; }
+  .entry { padding-left: 70px; margin-left: 12px; margin-right: 12px; }
+  .entry-box { margin-left: -70px; }
+  .entry-box-inner { padding: 32px 28px; }
+  .entry-icon { width: 48px; height: 48px; }
+}
+
+/* homepage feed — half-width posts, staggered left/right */
+
+.home-feed .window-box {
+  width: fit-content;
+  max-width: 88%;
+  position: relative;
+}
+
+.home-feed .window-box:nth-of-type(odd) {
+  margin: 0 auto 40px 22%;
+}
+
+.home-feed .window-box:nth-of-type(even) {
+  margin: -70px 22% 40px auto;
+}
+
+.home-feed .window-box:not(:first-of-type) {
+  margin-top: -70px;
+}
+
+@media (max-width: 900px) {
+  .home-feed .window-box {
+    width: auto;
+    max-width: none;
+  }
+  .home-feed .window-box:nth-of-type(odd),
+  .home-feed .window-box:nth-of-type(even) {
+    margin: 0 20px 40px;
+  }
+  .window-body {
+    min-width: 0;
+  }
+  .window-title {
+    white-space: normal;
+    flex-shrink: 1;
+  }
+}
+
+/* ---------- messy desktop scatter (decorative background windows) ---------- */
+
+.desktop-scatter {
+  position: relative;
+}
+
+.home-feed {
+  position: relative;
+  z-index: 2;
+}
+
+.home-feed .window-box {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.home-feed .window-box:hover {
+  transform: scale(1.035);
+  z-index: 5;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.25);
+}
+
+.deco-window {
+  position: absolute;
+  z-index: 1;
+  border: 3px solid #000000;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.deco-window .window-titlebar {
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  border-bottom: 3px solid #000000;
+}
+
+.deco-media {
+  width: 100%;
+  height: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #e6e6e6,
+    #e6e6e6 10px,
+    #f6f6f6 10px,
+    #f6f6f6 20px
+  );
+}
+
+.deco-square .deco-media { padding-top: 100%; }
+.deco-4x3 .deco-media { padding-top: 75%; }
+.deco-16x9 .deco-media { padding-top: 56.25%; }
+.deco-portrait .deco-media { padding-top: 133%; }
+
+/* ---------- submit page (v2) ---------- */
+
+.submit-content {
+  max-width: 720px;
+  margin: 0 32px 80px;
+  text-align: left;
+}
+
+.submit-content p {
+  font-family: "lores-12", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #000000;
+  margin: 0 0 32px;
+}
+
+.submit-content .term {
+  font-weight: 400;
+}
+
+.submit-housekeeping-label {
+  font-family: "argent-pixel-cf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  color: #000000;
+  margin: 0 0 18px;
+}
+
+.submit-content ul {
+  margin: 0 0 32px;
+  padding-left: 28px;
+}
+
+.submit-content li {
+  font-family: "lores-12", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #000000;
+  margin: 0 0 10px;
+}
+
+@media (max-width: 640px) {
+  .submit-content { margin-left: 20px; margin-right: 20px; }
+}
+
+/* ---------- retro window-chrome text box (reusable) ---------- */
+
+.window-box {
+  border: 3px solid #000000;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+  margin: 0 32px 40px;
+}
+
+.window-titlebar {
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  border-bottom: 3px solid #000000;
+}
+
+.window-icon-box {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border: 2px solid #000000;
+  border-radius: 0;
+  background-color: #ffffff;
+  background-size: 21px 21px;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* SPORT LABELS — add one 3-line block per new sport.
+   Then on any post, just set data-sport="yourlabel" on
+   .window-box once, and both icon badges update automatically. */
+
+.window-box[data-sport="baseball"] .window-icon-box {
+  background-image: url('assets/icons/baseball-icon.png');
+}
+
+.window-box[data-sport="football"] .window-icon-box {
+  background-image: url('assets/icons/football-icon.png');
+}
+
+.window-box[data-sport="bowling"] .window-icon-box {
+  background-image: url('assets/icons/bowling-icon.png');
+}
+
+.window-box[data-sport="basketball"] .window-icon-box {
+  background-image: url('assets/icons/basketball-icon.png');
+}
+
+.window-lines {
+  flex: 1 1 auto;
+  height: 22px;
+  margin: 0 6px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #000000 0px,
+    #000000 2px,
+    transparent 2px,
+    transparent 4px
+  );
+}
+
+.window-lines-edge {
+  width: 14px;
+  height: 22px;
+  flex-shrink: 0;
+  margin: 0 6px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #000000 0px,
+    #000000 2px,
+    transparent 2px,
+    transparent 4px
+  );
+}
+
+.window-title {
+  font-family: "lores-12-bold-alt-oakland", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 19px;
+  color: #000000;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding: 0 2px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.window-title a {
+  text-decoration: none;
+}
+
+.window-title a:hover {
+  text-decoration: underline;
+}
+
+.window-body {
+  padding: 32px 40px;
+  min-width: 760px;
+}
+
+.window-body p {
+  font-family: "lores-12", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  line-height: 1.75;
+  color: #000000;
+  margin: 0;
+  text-indent: 2em;
+}
+
+@media (max-width: 640px) {
+  .window-title { font-size: 16px; }
+  .window-body { padding: 28px 24px; }
+  .window-icon-box { width: 36px; height: 36px; }
+}
+
