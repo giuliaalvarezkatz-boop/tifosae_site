@@ -561,6 +561,11 @@ footer.site-footer {
 .home-feed {
   position: relative;
   z-index: 2;
+  pointer-events: none;
+}
+
+.home-feed .window-box {
+  pointer-events: auto;
 }
 
 .home-feed .window-box {
