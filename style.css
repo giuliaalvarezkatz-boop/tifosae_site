@@ -735,7 +735,7 @@ footer.site-footer {
 
 .window-body {
   padding: 32px 40px;
-  width: min(17.6vw, 420px);
+  width: 400px;
 }
 
 .window-body p {
