@@ -692,9 +692,9 @@ footer.site-footer {
   background-image: repeating-linear-gradient(
     to bottom,
     #000000 0px,
-    #000000 1.6px,
-    transparent 1.6px,
-    transparent 3.2px
+    #000000 2px,
+    transparent 2px,
+    transparent 4px
   );
 }
 
@@ -706,9 +706,9 @@ footer.site-footer {
   background-image: repeating-linear-gradient(
     to bottom,
     #000000 0px,
-    #000000 1.6px,
-    transparent 1.6px,
-    transparent 3.2px
+    #000000 2px,
+    transparent 2px,
+    transparent 4px
   );
 }
 
@@ -735,7 +735,7 @@ footer.site-footer {
 
 .window-body {
   padding: 32px 40px;
-  min-width: 17.6vw;
+  min-width: min(17.6vw, 420px);
 }
 
 .window-body p {
