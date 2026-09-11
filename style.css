@@ -419,10 +419,10 @@ footer.site-footer {
 
 .masthead-border {
   margin-bottom: 40px;
-  height: 256px;
+  height: 150px;
   background-image: url('assets/border/masthead-border-tile.png');
   background-repeat: repeat-x;
-  background-size: 24px 256px;
+  background-size: 24px 150px;
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
