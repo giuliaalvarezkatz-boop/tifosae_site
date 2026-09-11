@@ -348,9 +348,11 @@ footer.site-footer {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 44px 32px 14px;
+  padding: 44px 32px 4px;
   gap: 20px;
   flex-wrap: wrap;
+  background: #000000;
+  color: #ffffff;
 }
 
 .masthead-logo-row {
@@ -363,9 +365,10 @@ footer.site-footer {
   font-family: "argent-pixel-cf", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 56px;
-  color: #000000;
+  font-size: 76px;
+  color: #ffffff;
   margin: 0;
+  line-height: 1;
   letter-spacing: -0.04em;
 }
 
@@ -385,6 +388,15 @@ footer.site-footer {
   font-size: 19px;
   line-height: 1.3;
   text-align: right;
+  color: #ffffff;
+}
+
+.masthead-nav a {
+  color: #ffffff;
+}
+
+.masthead-nav a:hover {
+  opacity: 0.6;
 }
 
 .masthead-nav a {
@@ -401,6 +413,19 @@ footer.site-footer {
   justify-content: space-between;
   align-items: center;
   margin: 0 32px 56px;
+}
+
+/* ---------- masthead pixel border (dots + checkerboards) ---------- */
+
+.masthead-border {
+  margin-bottom: 40px;
+  height: 256px;
+  background-image: url('assets/border/masthead-border-tile.png');
+  background-repeat: repeat-x;
+  background-size: 24px 256px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
 }
 
 .dash-divider span {
