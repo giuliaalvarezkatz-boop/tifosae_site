@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Archive — Tifosæ</title>
+<title>Submit — Tifosæ</title>
 <link rel="stylesheet" href="https://use.typekit.net/shb1ltt.css">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -16,9 +16,8 @@
   <span class="masthead-tagline">a literary magazine about sport</span>
   <nav class="masthead-nav">
     <a href="index.html">Home</a>
-    <a href="#">About</a>
     <a href="#">Search</a>
-    <a href="submit.html">Submit</a>
+    <a href="archive.html">Submit</a>
   </nav>
 </header>
 
@@ -93,6 +92,128 @@
   </div>
 
 <main class="home-feed">
+
+  <div class="window-box">
+    <div class="window-titlebar">
+      <div class="window-lines-edge"></div>
+      <div class="window-icon-box"></div>
+      <div class="window-lines"></div>
+      <div class="window-icon-box window-icon-box-right"></div>
+      <div class="window-lines-edge"></div>
+    </div>
+    <div class="window-body">
+      <p>
+        TIFOSO: from the italian <em>tifo</em>, the fever-inducing
+        disease typhus. It has since become a metaphor to describe
+        the fervor afflicting sports fans.
+      </p>
+    </div>
+  </div>
+
+  <div class="window-box">
+    <div class="window-titlebar">
+      <div class="window-lines-edge"></div>
+      <div class="window-icon-box"></div>
+      <div class="window-lines"></div>
+      <div class="window-icon-box window-icon-box-right"></div>
+      <div class="window-lines-edge"></div>
+    </div>
+    <div class="window-body">
+      <p>
+        <strong>TIFOSÆ</strong> publishes fiction, nonfiction, and
+        poetry about sport: We want the drama, the ecstasy, the
+        grief, the nail-chewing, the throats rubbed raw from a day
+        spent screaming, the adulation, the rage, and everything in
+        between.
+      </p>
+      <p>
+        If the piece could run in a traditional sport publication,
+        it's not for us. If all sport details were removed and the
+        piece would survive, it's also probably not for us. Trust
+        your judgment but please don't make us regret it!
+      </p>
+    </div>
+  </div>
+
+  <div class="window-box">
+    <div class="window-titlebar">
+      <div class="window-lines-edge"></div>
+      <div class="window-icon-box"></div>
+      <div class="window-lines"></div>
+      <h2 class="window-title">HOUSEKEEPING</h2>
+      <div class="window-lines"></div>
+      <div class="window-icon-box window-icon-box-right"></div>
+      <div class="window-lines-edge"></div>
+    </div>
+    <div class="window-body">
+      <p>
+        Fiction and nonfiction under 3,000 words.
+      </p>
+      <p>
+        Send up to 3 poems per submission, no more than 5 pages.
+      </p>
+    </div>
+  </div>
+
+  <div class="window-box">
+    <div class="window-titlebar">
+      <div class="window-lines-edge"></div>
+      <div class="window-icon-box"></div>
+      <div class="window-lines"></div>
+      <h2 class="window-title">WHAT WE'RE LOOKING FOR//FICTION</h2>
+      <div class="window-lines"></div>
+      <div class="window-icon-box window-icon-box-right"></div>
+      <div class="window-lines-edge"></div>
+    </div>
+    <div class="window-body">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+        do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Quis ipsum suspendisse ultrices gravida. Risus
+        commodo viverra maecenas accumsan lacus vel facilisis.
+      </p>
+    </div>
+  </div>
+
+  <div class="window-box">
+    <div class="window-titlebar">
+      <div class="window-lines-edge"></div>
+      <div class="window-icon-box"></div>
+      <div class="window-lines"></div>
+      <h2 class="window-title">WHAT WE'RE LOOKING FOR//NONFICTION</h2>
+      <div class="window-lines"></div>
+      <div class="window-icon-box window-icon-box-right"></div>
+      <div class="window-lines-edge"></div>
+    </div>
+    <div class="window-body">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+        do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Quis ipsum suspendisse ultrices gravida. Risus
+        commodo viverra maecenas accumsan lacus vel facilisis.
+      </p>
+    </div>
+  </div>
+
+  <div class="window-box">
+    <div class="window-titlebar">
+      <div class="window-lines-edge"></div>
+      <div class="window-icon-box"></div>
+      <div class="window-lines"></div>
+      <h2 class="window-title">WHAT WE'RE LOOKING FOR//POETRY</h2>
+      <div class="window-lines"></div>
+      <div class="window-icon-box window-icon-box-right"></div>
+      <div class="window-lines-edge"></div>
+    </div>
+    <div class="window-body">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+        do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Quis ipsum suspendisse ultrices gravida. Risus
+        commodo viverra maecenas accumsan lacus vel facilisis.
+      </p>
+    </div>
+  </div>
 
   <div class="window-box" data-sport="baseball">
     <div class="window-titlebar">
@@ -203,26 +324,15 @@
 </div>
 
 <script>
-  console.log('SCRIPT IS RUNNING');
-  var boxes = document.querySelectorAll('.deco-window');
-  console.log('found', boxes.length, 'deco-window elements');
-
-  boxes.forEach(function (box, i) {
+  document.querySelectorAll('.deco-window').forEach(function (box) {
     var video = box.querySelector('video');
-    console.log('box', i, 'has video:', !!video);
     if (!video) return;
 
     box.addEventListener('mouseenter', function () {
-      console.log('hover IN on', video.src);
-      video.play().then(function () {
-        console.log('play() succeeded');
-      }).catch(function (e) {
-        console.log('play() failed:', e);
-      });
+      video.play().catch(function () {});
     });
 
     box.addEventListener('mouseleave', function () {
-      console.log('hover OUT on', video.src);
       video.pause();
     });
   });
