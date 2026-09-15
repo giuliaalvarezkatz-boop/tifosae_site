@@ -5,15 +5,13 @@
   1. Copy this file, rename it something like post-piecename.html
   2. Change the <title> tag
   3. Change POST_GENRE, POST_TITLE, POST_AUTHOR below
-  4. Point the background-image url() at the right sport background
-     in assets/backgrounds/
-  5. Replace the two placeholder <p> paragraphs with the real piece
+  4. Change data-sport="POST_SPORT" to the right sport label (or
+     remove the attribute entirely to leave the icon squares empty)
+  5. Replace the placeholder <p> paragraphs with the real piece
      (one <p> per paragraph)
-  6. Add a matching <div class="card">...</div> block to archive.html
-     linking to this new file
 -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="v2-page">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,43 +19,47 @@
 <link rel="stylesheet" href="https://use.typekit.net/shb1ltt.css">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="v2-page">
 
-<header class="site-header">
-  <h1 class="logo">TIFOSÆ</h1>
-  <p class="tagline">literary writing about sport. lit first, sport second.</p>
-  <nav class="main-nav">
+<header class="masthead">
+  <div class="masthead-logo-row">
+    <h1 class="masthead-logo"><a href="index.html">TIFOSÆ</a></h1>
+  </div>
+  <span class="masthead-tagline">a literary magazine about sport</span>
+  <nav class="masthead-nav">
     <a href="index.html">Home</a>
-    <a href="archive.html">Archive</a>
+    <a href="#">About</a>
+    <a href="#">Search</a>
     <a href="submit.html">Submit</a>
   </nav>
 </header>
 
-<div class="post-banner" style="background-image: url('assets/backgrounds/SPORT_FILENAME.png');"></div>
+<div class="masthead-border"></div>
 
-<div class="post-meta">
-  <p class="post-genre">POST_GENRE</p>
-  <h1 class="post-title">POST_TITLE</h1>
-  <p class="post-author">by POST_AUTHOR</p>
-</div>
+<div class="single-post-wrap">
 
-<div class="post-body">
-  <div class="post-body-inner">
-    <p>
-      First paragraph of the piece goes here.
-    </p>
-    <p>
-      Second paragraph goes here. Add as many &lt;p&gt; tags as the
-      piece needs.
-    </p>
+  <div class="window-box" data-sport="POST_SPORT">
+    <div class="window-titlebar">
+      <div class="window-lines-edge"></div>
+      <div class="window-icon-box"></div>
+      <div class="window-lines"></div>
+      <h2 class="window-title">POST_TITLE//POST_AUTHOR</h2>
+      <div class="window-lines"></div>
+      <div class="window-icon-box window-icon-box-right"></div>
+      <div class="window-lines-edge"></div>
+    </div>
+    <div class="window-body">
+      <p>
+        First paragraph of the piece goes here.
+      </p>
+      <p>
+        Second paragraph goes here. Add as many &lt;p&gt; tags as the
+        piece needs.
+      </p>
+    </div>
   </div>
+
 </div>
-
-<a href="archive.html" class="back-link">&larr; BACK TO ARCHIVE</a>
-
-<footer class="site-footer">
-  Tifosæ &middot; a home for literary approaches to sport
-</footer>
 
 </body>
 </html>

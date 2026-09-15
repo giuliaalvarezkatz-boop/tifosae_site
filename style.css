@@ -823,6 +823,14 @@ footer.site-footer {
   }
 }
 
+/* ---------- single post page (focused, no stagger/scatter) ---------- */
+
+.single-post-wrap {
+  max-width: 900px;
+  margin: 60px auto 100px;
+  padding: 0 24px;
+}
+
 .window-title a {
   text-decoration: none;
 }
