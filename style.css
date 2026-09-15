@@ -544,8 +544,6 @@ footer.site-footer {
 }
 
 @media (max-width: 640px) {
-  .masthead { flex-direction: column; }
-  .masthead-nav { text-align: left; }
   .masthead-logo { font-size: 38px; }
   .entry { padding-left: 70px; margin-left: 12px; margin-right: 12px; }
   .entry-box { margin-left: -70px; }
@@ -582,14 +580,19 @@ footer.site-footer {
   }
   .home-feed .window-box:nth-of-type(odd),
   .home-feed .window-box:nth-of-type(even) {
-    margin: 0 20px 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 40px;
+    max-width: none;
   }
   .window-body {
     width: auto;
+    padding: 28px 24px;
   }
   .window-title {
     white-space: normal;
     flex-shrink: 1;
+    min-width: 0;
   }
 }
 
@@ -802,11 +805,16 @@ footer.site-footer {
   font-style: normal;
   font-size: 15px;
   color: #000000;
-  white-space: nowrap;
-  flex-shrink: 0;
   padding: 0 2px;
   margin: 0;
   line-height: 1.2;
+}
+
+@media (min-width: 901px) {
+  .window-title {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
 }
 
 .window-title a {
@@ -817,20 +825,29 @@ footer.site-footer {
   text-decoration: underline;
 }
 
-.window-body {
-  padding: 32px 40px;
-  width: 713px;
+@media (min-width: 901px) {
+  .window-body {
+    width: 713px;
+    padding: 32px 40px;
+  }
 }
 
 .window-body p {
   font-family: "lores-12", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 17px;
-  line-height: 1.75;
+  font-size: 15px;
+  line-height: 1.5;
   color: #000000;
   margin: 0;
   text-indent: 2em;
+}
+
+@media (min-width: 901px) {
+  .window-body p {
+    font-size: 17px;
+    line-height: 1.75;
+  }
 }
 
 .read-more {
