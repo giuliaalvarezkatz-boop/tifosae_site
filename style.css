@@ -831,6 +831,61 @@ footer.site-footer {
   padding: 0 24px;
 }
 
+/* ---------- archive piece filter bar ---------- */
+
+.submit-lead {
+  font-family: "argent-pixel-cf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 36px;
+  line-height: 1.4;
+  color: #000000;
+  margin: 0 32px 90px;
+}
+
+.submit-lead em {
+  font-style: italic;
+}
+
+.piece-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  border: 3px solid #000000;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 0 32px 40px;
+  background: #ffffff;
+  font-family: "lores-12", sans-serif;
+  pointer-events: auto;
+}
+
+.piece-filter input,
+.piece-filter select,
+.piece-filter button {
+  font-family: "lores-12", sans-serif;
+  font-size: 15px;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  padding: 6px 10px;
+  background: #ffffff;
+  color: #000000;
+}
+
+.piece-filter input {
+  flex: 1 1 200px;
+}
+
+.piece-filter button {
+  cursor: pointer;
+}
+
+.piece-filter button:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
 .window-title a {
   text-decoration: none;
 }
