@@ -594,6 +594,12 @@ footer.site-footer {
     flex-shrink: 1;
     min-width: 0;
   }
+  .window-icon-box-right {
+    display: none;
+  }
+  .window-lines {
+    margin: 0 4px;
+  }
 }
 
 /* ---------- messy desktop scatter (decorative background windows) ---------- */
