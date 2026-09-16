@@ -831,6 +831,16 @@ footer.site-footer {
   padding: 0 24px;
 }
 
+.welcome-body p {
+  text-align: center;
+  text-indent: 0;
+}
+
+.welcome-body a {
+  color: #0000ee;
+  text-decoration: underline;
+}
+
 /* ---------- archive piece filter bar ---------- */
 
 .submit-lead {
