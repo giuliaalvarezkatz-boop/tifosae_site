@@ -838,7 +838,15 @@ footer.site-footer {
   text-decoration: underline;
 }
 
-/* ---------- archive piece filter bar ---------- */
+.window-body a {
+  color: #0000ee;
+  text-decoration: underline;
+}
+
+.window-body a:hover {
+  color: #808080;
+  text-decoration: underline;
+}
 
 .submit-lead {
   font-family: "argent-pixel-cf", sans-serif;
