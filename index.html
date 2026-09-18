@@ -36,7 +36,75 @@
 
 <div class="masthead-border"></div>
 
-<div class="single-post-wrap">
+<div class="desktop-scatter">
+
+  <div class="deco-window deco-square" style="width: 300px; top: 40px; left: 3%;">
+    <div class="window-titlebar">
+      <div class="window-lines-edge"></div>
+      <div class="window-icon-box"></div>
+      <div class="window-lines"></div>
+    </div>
+    <div class="deco-media">
+      <video src="assets/videos/01.mp4" muted loop playsinline preload="none"></video>
+    </div>
+  </div>
+
+  <div class="deco-window deco-4x3" style="width: 280px; top: 70px; right: 3%;">
+    <div class="window-titlebar">
+      <div class="window-lines-edge"></div>
+      <div class="window-icon-box"></div>
+      <div class="window-lines"></div>
+    </div>
+    <div class="deco-media">
+      <video src="assets/videos/02.mp4" muted loop playsinline preload="none"></video>
+    </div>
+  </div>
+
+  <div class="deco-window deco-16x9" style="width: 300px; top: 340px; left: 8%;">
+    <div class="window-titlebar">
+      <div class="window-lines-edge"></div>
+      <div class="window-icon-box"></div>
+      <div class="window-lines"></div>
+    </div>
+    <div class="deco-media">
+      <video src="assets/videos/03.mp4" muted loop playsinline preload="none"></video>
+    </div>
+  </div>
+
+  <div class="deco-window deco-square" style="width: 260px; top: 400px; right: 8%;">
+    <div class="window-titlebar">
+      <div class="window-lines-edge"></div>
+      <div class="window-icon-box"></div>
+      <div class="window-lines"></div>
+    </div>
+    <div class="deco-media">
+      <video src="assets/videos/04.mp4" muted loop playsinline preload="none"></video>
+    </div>
+  </div>
+
+  <div class="deco-window deco-portrait" style="width: 280px; top: 560px; left: 4%;">
+    <div class="window-titlebar">
+      <div class="window-lines-edge"></div>
+      <div class="window-icon-box"></div>
+      <div class="window-lines"></div>
+    </div>
+    <div class="deco-media">
+      <video src="assets/videos/05.mp4" muted loop playsinline preload="none"></video>
+    </div>
+  </div>
+
+  <div class="deco-window deco-4x3" style="width: 300px; top: 725px; right: 4%;">
+    <div class="window-titlebar">
+      <div class="window-lines-edge"></div>
+      <div class="window-icon-box"></div>
+      <div class="window-lines"></div>
+    </div>
+    <div class="deco-media">
+      <video src="assets/videos/06.mp4" muted loop playsinline preload="none"></video>
+    </div>
+  </div>
+
+<main class="home-feed">
 
   <div class="window-box" data-sport="football">
     <div class="window-titlebar">
@@ -59,7 +127,24 @@
     </div>
   </div>
 
+</main>
+
 </div>
+
+<script>
+  document.querySelectorAll('.deco-window').forEach(function (box) {
+    var video = box.querySelector('video');
+    if (!video) return;
+
+    box.addEventListener('mouseenter', function () {
+      video.play().catch(function () {});
+    });
+
+    box.addEventListener('mouseleave', function () {
+      video.pause();
+    });
+  });
+</script>
 
 </body>
 </html>

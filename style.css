@@ -423,16 +423,13 @@ footer.site-footer {
 }
 
 .masthead-tagline {
-  position: absolute;
-  left: 50%;
-  bottom: 10px;
-  transform: translateX(-50%);
   font-family: "lores-12-narrow", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 30px;
   color: #0000ee;
   text-decoration: underline;
+  text-shadow: 3px 3px 0 #ffffff;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
@@ -853,8 +850,6 @@ footer.site-footer {
   text-align: center;
   max-width: 713px;
   margin: 0 auto 40px;
-  position: relative;
-  z-index: 999;
 }
 
 .submit-lead em {
