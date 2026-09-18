@@ -429,7 +429,7 @@ footer.site-footer {
   font-size: 30px;
   color: #0000ee;
   text-decoration: underline;
-  text-shadow: 3px 3px 0 #ffffff;
+  text-shadow: 1px 1px 0 #ffffff;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
