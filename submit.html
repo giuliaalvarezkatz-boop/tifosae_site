@@ -145,8 +145,9 @@
         Simultaneous submissions are accepted, just let us know if
         it's accepted elsewhere.
       </p>
-      <p>
-        <a href="https://forms.gle/ALqWvY4o2fmmPfjc8">SUBMIT HERE</a>
+      <p id="submit-cta">
+        <span id="submit-pending">Submissions open October 1, 2026</span>
+        <a id="submit-link" href="https://forms.gle/ALqWvY4o2fmmPfjc8" style="display:none;">SUBMIT HERE</a>
       </p>
     </div>
   </div>
@@ -219,6 +220,14 @@
       video.pause();
     });
   });
+
+  // Auto-reveal the real submit link on/after the launch date —
+  // checks the visitor's own clock each time the page loads.
+  var submissionsOpenDate = new Date('2026-10-01T00:00:00');
+  if (new Date() >= submissionsOpenDate) {
+    document.getElementById('submit-pending').style.display = 'none';
+    document.getElementById('submit-link').style.display = 'inline';
+  }
 </script>
 
 </body>
