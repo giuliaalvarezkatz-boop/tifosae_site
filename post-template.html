@@ -1,14 +1,22 @@
 <!--
-  POST TEMPLATE — duplicate this file for every new piece.
+  POST TEMPLATE — duplicate this for every new piece.
 
   Steps:
-  1. Copy this file, rename it something like post-piecename.html
-  2. Change the <title> tag
-  3. Change POST_GENRE, POST_TITLE, POST_AUTHOR below
-  4. Change data-sport="POST_SPORT" to the right sport label (or
+  1. Make a new folder at the site root named after the piece, e.g.
+     post-piecename (lowercase, hyphens for spaces, no spaces/punctuation)
+  2. Put a copy of this file inside that folder, named exactly index.html
+     (that's what gives it the clean URL tifosae.com/post-piecename/
+     instead of tifosae.com/post-piecename.html)
+  3. Change the <title> tag
+  4. Change POST_GENRE, POST_TITLE, POST_AUTHOR below
+  5. Change data-sport="POST_SPORT" to the right sport label (or
      remove the attribute entirely to leave the icon squares empty)
-  5. Replace the placeholder <p> paragraphs with the real piece
+  6. Replace the placeholder <p> paragraphs with the real piece
      (one <p> per paragraph)
+  7. If you want it reachable from the Random button, add it to the
+     PIECES array in assets/js/pieces.js — set its "link" to
+     "/post-piecename/" (matching the folder name, with leading and
+     trailing slashes)
 -->
 <!DOCTYPE html>
 <html lang="en" class="v2-page">
@@ -17,20 +25,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>POST_TITLE — Tifosæ</title>
 <link rel="stylesheet" href="https://use.typekit.net/shb1ltt.css">
-<link rel="stylesheet" href="style.css">
-<script src="assets/js/pieces.js"></script>
+<link rel="stylesheet" href="/style.css">
+<script src="/assets/js/pieces.js"></script>
 </head>
 <body class="v2-page">
 
 <header class="masthead">
   <div class="masthead-logo-row">
-    <h1 class="masthead-logo"><a href="index.html">TIFOSÆ</a></h1>
+    <h1 class="masthead-logo"><a href="/">TIFOSÆ</a></h1>
   </div>
   <span class="masthead-tagline">a literary magazine about sport</span>
   <nav class="masthead-nav">
-    <a href="index.html" target="_blank" rel="noopener">Home</a>
+    <a href="/" target="_blank" rel="noopener">Home</a>
     <a href="#" target="_blank" rel="noopener">Search</a>
-    <a href="submit.html" target="_blank" rel="noopener">Submit</a>
+    <a href="/submit/" target="_blank" rel="noopener">Submit</a>
     <a href="#" target="_blank" rel="noopener" onclick="goToRandomPiece(); return false;">Random</a>
   </nav>
 </header>
